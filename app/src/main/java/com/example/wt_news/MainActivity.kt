@@ -48,19 +48,27 @@ class MainActivity : AppCompatActivity() {
             .setContentTitle("Notifications Example") //set title of notification
             .setContentText("This is a notification message") //this is notification message
             .setPriority(NotificationCompat.PRIORITY_DEFAULT) //set priority of notification
+            .setSmallIcon(R.drawable.ic_launcher_background)
+        println("After builder")
         val notificationIntent = Intent(this, MainActivity::class.java)
+        println("Boom")
         notificationIntent.addFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP)
+        println("Bamm")
         //notification message will get at NotificationView
         notificationIntent.putExtra("message", "This is a notification message")
+        println("Foo")
         val pendingIntent = PendingIntent.getActivity(
             this, 0, notificationIntent,
             PendingIntent.FLAG_UPDATE_CURRENT
         )
+        println("Bar")
         builder.setContentIntent(pendingIntent)
 
         // Add as notification
         val manager = getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        println("baz")
         manager.notify(0, builder.build())
+        println("Bang")
     }
 
     override fun onCreateOptionsMenu(menu: Menu): Boolean {
