@@ -11,4 +11,6 @@
     <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
     <string name="channel_name">Wt_news</string>
     <string name="channel_description">WT news</string>
+    <string name="cum_button">cum</string>
+    <string name="to_first">Back to the first fragment</string>
 </resources>

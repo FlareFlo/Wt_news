@@ -4,10 +4,12 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/flamion/StudioProjects/Wt_news/app/src/main/res/layout/fragment_first.xml" value="0.32653985507246375" />
+        <entry key="app/src/main/res/layout/fragment_second.xml" value="0.33" />
+        <entry key="app/src/main/res/layout/fragment_third.xml" value="0.2554347826086957" />
       </map>
     </option>
   </component>
-  <component name="ProjectRootManager" version="2" languageLevel="JDK_X" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
+  <component name="ProjectRootManager" version="2" languageLevel="JDK_16" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
   <component name="ProjectType">
