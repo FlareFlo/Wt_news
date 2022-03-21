@@ -1,9 +1,12 @@
 package com.example.wt_news
 
+import android.app.Application
+import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
@@ -16,6 +19,7 @@ import androidx.navigation.ui.setupActionBarWithNavController
 import com.example.wt_news.databinding.ActivityMainBinding
 import com.google.android.material.snackbar.Snackbar
 
+public lateinit var ctx: Application
 
 class MainActivity : AppCompatActivity() {
 
@@ -24,6 +28,8 @@ class MainActivity : AppCompatActivity() {
 
     private val CHANNEL_ID = "Test_channel"
     private val NOTIFICATION_ID = 1
+
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -41,6 +47,20 @@ class MainActivity : AppCompatActivity() {
             addNotification()
         }
 
+        ctx = application
+
+        // Create the NotificationChannel, but only on API 26+ because
+        // the NotificationChannel class is new and not in the support library
+        val name = getString(R.string.channel_name)
+        val descriptionText = getString(R.string.channel_description)
+        val importance = NotificationManager.IMPORTANCE_DEFAULT
+        val channel = NotificationChannel(CHANNEL_ID, name, importance).apply {
+            description = descriptionText
+        }
+        // Register the channel with the system
+        val notificationManager: NotificationManager =
+            getSystemService(Context.NOTIFICATION_SERVICE) as NotificationManager
+        notificationManager.createNotificationChannel(channel)
     }
 
     private fun addNotification() {

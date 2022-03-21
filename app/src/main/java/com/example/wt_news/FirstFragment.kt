@@ -40,20 +40,6 @@ class FirstFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.buttonFirst.setOnClickListener {
-            val intent = Intent(
-                ApplicationProvider.getApplicationContext<Context>(),
-                MainActivity::class.java
-            )
-            val pi = PendingIntent.getActivity(
-                ApplicationProvider.getApplicationContext<Context>(),
-                0,
-                intent,
-                0
-            )
-
-            val sms = SmsManager.getDefault()
-            sms.sendTextMessage("", null, "hello javatpoint", pi,null);
-
             findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
         }
     }
